@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultura Musical Brasileira</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    
+
+<style>
+
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background: linear-gradient(180deg, #1e90ff, #0077cc);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-list li {
+      margin: 0 15px;
+      opacity: 0;
+      animation: slideIn 0.5s forwards;
+      animation-delay: calc(0.1s * var(--i));
+    }
+
+    .nav-list a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .nav-list a:hover {
+      background-color: #005bb5;
+      transform: scale(1.1);
+    }
+
+    /* Animation for navbar items */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    /* Content Styles */
+    h1, h2 {
+      color: #333;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 10px auto;
+      line-height: 1.6;
+      text-align: justify;
+      padding: 0 20px;
+    }
+
+    img {
+      max-width: 90%;
+      height: auto;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    /* Feedback Section */
+    #feedback-section {
+      margin: 30px 0;
+    }
+
+    textarea {
+      width: 90%;
+      max-width: 600px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background-color: #1e90ff;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0066cc;
+    }
+
+    #melhoria-form, #mensagem-final {
+      margin-top: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-list.active {
+        display: flex;
+        background: #0077cc;
+        padding: 10px 0;
+      }
+
+      .nav-list li {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+      }
+
+      .navbar {
+        padding: 10px 0;
+        position: relative;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-list">
+      <li style="--i: 1"><a href="#">Início</a></li>
+      <li style="--i: 2"><a href="#">História</a></li>
+      <li style="--i: 3"><a href="#">Economia</a></li>
+      <li style="--i: 4"><a href="#">Gastronomia</a></li>
+      <li style="--i: 5"><a href="#">Música</a></li>
+      <li style="--i: 6"><a href="#">Pontos turísticos</a></li>
+      <li style="--i: 7"><a href="#">Religiões</a></li>
+      <li style="--i: 8"><a href="#">Festas</a></li>
+      <li style="--i: 9"><a href="#">Lendas</a></li>
+      <li style="--i: 10"><a href="#">Esportes</a></li>
+    </ul>
+  </nav>
+
+<div class="social">
+
+    <a href="#" target="_blank">
+      <i class="fab fa-facebook-f"></i></i>
+    </a>
+
+    <a href="#" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="#" target="_blank">
+      <i class="fab fa-twitter"></i>
+    </a>
+    
+    <a href="#" target="_blank">
+      <i class="fab fa-youtube"></i>
+    </a>
+
+    <a href="#" target="_blank">
+      <i class="fab fa-pinterest"></i>
+    </a>
+
+</div>
+
+<style>
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: hsl(0, 0%, 100%);
+        color: #000000;
+        line-height: 1.6;
+    }
+    .conteudo {
+        text-align: justify;
+        max-width: 800px;
+        margin: auto;
+        background-color: hwb(0 100% 0%);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px hwb(197 0% 0%);
+    }
+    h1 {
+        text-align: center;
+        color: #000000;
+    }
+    h2 {
+        text-align: center;
+        color: #0000;
+    }
+    h2 {
+        text-align: center;
+        color: #000000;
+    }
+    h1 {
+        text-align: center;
+        color: #000000;
+    }
+</style>
+</head>
+<body>
+
+
+
+
+
+<div class="conteudo">
+
+    <main>
+        <section>
+          <h2>Samba</h2>
+          <p>O samba é um dos gêneros musicais mais representativos do Brasil, com raízes africanas e uma forte ligação com o Carnaval.</p>
+          <p>O samba é um gênero musical e uma dança de origem afro-brasileira, considerado um dos elementos mais representativos da cultura popular do Brasil. Surgiu no início do século XX, principalmente nas comunidades afro-brasileiras do Rio de Janeiro, e é resultado da miscigenação entre a música africana e europeia. O samba é caracterizado por seus ritmos distintos e o uso de instrumentos de percussão, e é frequentemente associado a festividades e celebrações, como o Carnaval. 
+          </p>
+          <img src="imagem/sambe.jpg" alt="cultura 3">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/bO3EsHjFeMs?si=BUKSG9sO2qfib-cG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    
+        <section>
+          <h2>Bossa Nova</h2>
+          <p>Nasceu na década de 1950 e mistura samba com jazz. Artistas como João Gilberto e Tom Jobim são ícones desse estilo.</p>
+          <P>A Bossa Nova foi um movimento da música popular brasileira que surgiu no final dos anos 50, caracterizado por forte influência do samba carioca e do jazz norte-americano.
+
+            História da Bossa Nova
+            A bossa nova desponta em meio ao processo de urbanização e industrialização no Brasil, no governo de Juscelino Kubitschek (1902-1976).
+            
+            Nessa época, estavam em vigor o Plano de Metas e a Política Desenvolvimentista, realçados pelo lema "cinquenta anos em cinco", que tinha como propósito o crescimento econômico do país.
+            
+            O movimento surge entre músicos jovens da classe média carioca, que se reuniam com o intuito de experimentar e inovar nas composições.
+            
+            Em 1958, o lançamento do compacto de João Gilberto, um dos maiores representantes da bossa nova, consolida o estilo musical.
+            
+            joão gilberto
+            João Gilberto em apresentação junto com a filha Bebel Gilberto
+            O movimento da Bossa Nova durou pouco mais de uma década, terminando em 1966.
+            
+            Posteriormente, aparece outro estilo, a MPB (Música Popular Brasileira), que valoriza e se referencia na bossa nova.
+            
+            Importante ressaltar que o término do movimento não significou o fim da criação musical seguindo essa linha, uma vez que muitos compositores e músicos atualmente buscam unir os tons melódicos e o samba brasileiro.
+            
+            Veja também: MPB - Música Popular Brasileira
+            Origem do termo "Bossa nova"
+            O termo "Bossa" foi utilizado pela primeira vez numa canção composta por Noel Rosa, Coisas Nossas, na década de 1930. Na letra, Noel diz: "O samba, a prontidão e outras bossas, são coisas nossas".
+            
+            A expressão era uma gíria utilizada para se referir a um "jeito de fazer as coisas". Dessa forma, os artistas se apropriaram do termo "bossa nova" para sugerir que estavam compondo e cantando de uma nova maneira.
+            
+            Características e músicas da Bossa Nova
+            As características da Bossa Nova podem ser apontadas como:
+            
+            tom coloquial na voz;
+            temas cotidianos;
+            voz mais baixa, quase como sussurros;
+            harmonias de samba;
+            invenções melódicas de jazz.
+            Uma das músicas mais marcantes desse movimento, e que ficou conhecida mundialmente, é Garota de Ipanema, composta por Vinícius de Moraes e Antônio Carlos Jobim em 1962.
+            
+            A história da canção é verídica, inspirada na modelo brasileira Helô Pinheiro, a moça bonita que passava na orla da praia de Ipanema no Rio de Janeiro.
+            
+            Além dessa, a música Chega de Saudade, também composta pela dupla Tom e Vinícius, marcou época.
+            
+            Vale lembrar que a canção que assinalou o fim do movimento da Bossa Nova no Brasil é Arrastão, de Vinícius de Moraes e Edu Lobo.
+            
+            Outras músicas que fizeram muito sucesso na época e são importantes obras brasileiras: Eu Sei Que Vou Te Amar, Se Todos Fossem Iguais a Você, Águas de março, Samba de uma nota só, O barquinho, Desafinado, Outra Vez, Coisa mais linda, Corcovado, Insensatez, Maria Ninguém, O Pato, Lobo Bobo, Saudade fez um Samba, dentre outras.
+            
+            Veja também: Samba de Roda
+            Músicos importantes da Bossa Nova
+            Além de João Gilberto, Tom Jobim e Vinícius de Moraes foram figuras essenciais para o desenvolvimento desse estilo musical.
+            
+            Outros músicos e compositores também aderiram ao estilo, alguns deles são:
+            
+            Dorival Caymmi
+            Edu Lobo
+            Francis Hime
+            Marcus Valle
+            Paulo Valle
+            Carlos Lyra
+            Ronaldo Bôscoli
+            Nara Leão
+            Bebel Gilberto
+            Baden Powell
+            Nelson Motta
+            Wilson Simonal
+            João Gilberto
+            João Gilberto Prado Pereira de Oliveira, conhecido como João Gilberto, foi um dos maiores expoentes da Bossa Nova no Brasil, considerado pioneiro nessa vertente.
+            
+            O músico nasceu em Juazeiro, Bahia, no dia 10 de junho de 1931. Faleceu em 6 de julho de 2019, no Rio de Janeiro.
+            
+            Figura genial, João Gilberto foi compositor, cantor e violonista. Algumas de suas composições, são: Desafinado, Bim Bom, Acapulco, Hô-Bá-Lá-Lá, Um abraço no Bonfá, Japão (Je Vous Aime Beaucoup?), Glass Beads, Minha saudade, dentre outras.
+            
+            Selecionamos um vídeo que mostra o músico apresentando Desafinado, veja:</P>
+          <img src="imagem/bossa nova.jpg" alt="cultura 3">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/d-qI0_tbDy0?si=Tc5241FikZLy4Mrt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    
+        <section>
+          <h2>Forró</h2>
+          <p>Originário do Nordeste, o forró é tocado com sanfona, zabumba e triângulo. É muito popular nas festas juninas.</p>
+          <p>O forró é uma expressão artística genuinamente nordestina. Por ser uma forma de manifestação cultural ampla, o termo forró tem diversos significados e pode servir tanto para designar o ritmo musical, o estilo de dança e mesmo a festividade em que acontece.
+
+            Como surgiu o forró?
+            Sua origem tem relação com bailes populares que eram realizados no final do século XIX e eram chamados de "forrobodó", "forrobodança" ou "forrobodão".
+            
+            Naquele tempo era preciso molhar o piso do local onde essas festas aconteciam, pois eles eram feitos de "chão batido", ou seja, não havia revestimento, somente terra.
+            
+            As pessoas costumavam dançar arrastando os pés a fim de evitar que a poeira levantasse, daí o termo rastapé ou arrasta-pé.
+            
+            forró xilogravura
+            Xilogravura "Forró de Regina", Regina Drozina
+            Também foram encontradas semelhanças entre esse estilo de dança e o toré - celebração indígena onde em dado momento ritualístico os indivíduos arrastam os pés nos chão.</p>
+            <img src="imagem/forró.jpg" alt="cultura 3">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FxiDG-EjgLU?si=3Oyo0r168apG4Isg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    
+        <button onclick="mostrarMensagem()">Clique para saber mais</button>
+        <p id="mensagemExtra" class="oculto">A música brasileira é diversa, vibrante e cheia de história. Explore também o axé, o funk carioca, o sertanejo e muito mais!</p>
+      </main>
+    
+      <footer>
+        <p>&copy; 2025 - Cultura Brasileira Musical</p>
+      </footer>
+
+      <p>Você pode acessar ao site de pontos turísticos da cultura brasileira <a href="file:///C:/Users/NIT0312495/Desktop/trabalhos%20atoas!/Inform%C3%A1tica/style/Untitled-1.html#" target="_blank" rel="external">pontos turísticos</a></p>
+      <p>Você pode acessar ao site de festas da cultura brasileira <a href="file:///C:/Users/NIT0312495/Desktop/trabalhos%20atoas!/Inform%C3%A1tica/style/cultura-2.html" target="_blank" rel="external">Festas</a></p>
+      <script src="script.js"></script>
+    </body>
+    </html>

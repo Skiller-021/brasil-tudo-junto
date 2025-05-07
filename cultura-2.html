@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festa</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #f9f9f9;
+      }
+  
+      /* Navbar Styles */
+      .navbar {
+        background: linear-gradient(180deg, #1e90ff, #0077cc);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+  
+      .nav-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+  
+      .nav-list li {
+        margin: 0 15px;
+        opacity: 0;
+        animation: slideIn 0.5s forwards;
+        animation-delay: calc(0.1s * var(--i));
+      }
+  
+      .nav-list a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.2s;
+        display: inline-block;
+      }
+  
+      .nav-list a:hover {
+        background-color: #005bb5;
+        transform: scale(1.1);
+      }
+  
+      /* Animation for navbar items */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      /* Mobile Menu Toggle */
+      .menu-toggle {
+        display: none;
+        font-size: 24px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+      }
+  
+      /* Content Styles */
+      h1, h2 {
+        color: #333;
+      }
+  
+      p {
+        max-width: 900px;
+        margin: 10px auto;
+        line-height: 1.6;
+        text-align: justify;
+        padding: 0 20px;
+      }
+  
+      img {
+        max-width: 90%;
+        height: auto;
+        margin: 15px 0;
+        border-radius: 8px;
+      }
+  
+      /* Feedback Section */
+      #feedback-section {
+        margin: 30px 0;
+      }
+  
+      textarea {
+        width: 90%;
+        max-width: 600px;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+  
+      button {
+        padding: 8px 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: #1e90ff;
+        color: white;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+  
+      button:hover {
+        background-color: #0066cc;
+      }
+  
+      #melhoria-form, #mensagem-final {
+        margin-top: 20px;
+      }
+  
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-list {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+        }
+  
+        .nav-list.active {
+          display: flex;
+          background: #0077cc;
+          padding: 10px 0;
+        }
+  
+        .nav-list li {
+          margin: 10px 0;
+        }
+  
+        .menu-toggle {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 15px;
+        }
+  
+        .navbar {
+          padding: 10px 0;
+          position: relative;
+        }
+      }
+    </style>
+    
+  </head>
+  <body>
+    <nav class="navbar">
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-list">
+        <li style="--i: 1"><a href="#">Início</a></li>
+        <li style="--i: 2"><a href="#">História</a></li>
+        <li style="--i: 3"><a href="#">Economia</a></li>
+        <li style="--i: 4"><a href="#">Gastronomia</a></li>
+        <li style="--i: 5"><a href="#">Música</a></li>
+        <li style="--i: 6"><a href="#">Pontos turísticos</a></li>
+        <li style="--i: 7"><a href="#">Religiões</a></li>
+        <li style="--i: 8"><a href="#">Festas</a></li>
+        <li style="--i: 9"><a href="#">Lendas</a></li>
+        <li style="--i: 10"><a href="#">Esportes</a></li>
+      </ul>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Festas</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Festa do Peão de Barretos</a></li>
+                  <li><a class="dropdown-item" href="#">Procissão do Fogaréu</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">...</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+   
+    <div class="social">
+
+        <a href="#" target="_blank">
+          <i class="fab fa-facebook-f"></i></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        
+        <a href="#" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-pinterest"></i>
+        </a>
+
+    </div>
+   
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: hsl(0, 0%, 100%);
+            color: #000000;
+            line-height: 1.6;
+        }
+        .conteudo {
+            text-align: justify;
+            max-width: 800px;
+            margin: auto;
+            background-color: hwb(0 100% 0%);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px hwb(197 0% 0%);
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+        h2 {
+            text-align: center;
+            color: #0000;
+        }
+        h2 {
+            text-align: center;
+            color: #000000;
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    
+    <div class="conteudo">
+        <h1>Festa do Peão de Barretos</h1>
+        <p>A Festa do Peão de Barretos é uma festa do peão de boiadeiro que acontece todos os anos na cidade de Barretos, no estado de São Paulo, Brasil. É o maior festival de rodeio da América Latina e atrai competidores de todo o mundo, além de milhares de turistas anualmente.[1][2] Sediou a Copa do Mundo de Rodeio em 2009.[3]
+
+            A festa é tradicionalmente organizada e promovida no mês de agosto pelo clube "Os Independentes".[4] Entre as tradições presentes na festa estão, além do rodeio, shows de música sertaneja, sendo o maior festival de música sertaneja do país, e a queima do alho.[5][6][7]
+            
+            História
+            Esta grande festa tem suas raízes no transporte de gado pelas estradas de terra desde as pastagens de Minas Gerais, Goiás, Mato Grosso do Sul e Mato Grosso, passando por Barretos em direção aos frigoríficos desta cidade. Os peões das "comitivas" que levavam estas boiadas se reuniam no entardecer para brincar de montar cavalos bravos, daí então surgindo este costume. A prática do rodeio em touros, hoje muito mais dinâmica que a de cavalos, foi trazida dos Estados Unidos. No ano de 1956, na cidade de Barretos, localizada no interior do estado de São Paulo, Brasil, um grupo de rapazes solteiros realizaram a primeira Festa do Peão de Boiadeiro que se tem notícia. Desde então esta grande festa ficou conhecida internacionalmente pela sua gigantesca estrutura e alta qualidade dos peões, cavalos e touros que ali se apresentam.[carece de fontes]
+            
+            Até o ano de 1984, a Festa do Peão era realizada no Recinto Paulo de Lima Correa, no centro da cidade, palco das memoráveis Exposições de Gado, notadamente nas décadas de 50, 60 e 70. "Os Independentes", desde 1985, realizam a festa em enorme parque cuja área é de mais de 110 hectares, projetado pelo famoso arquiteto Oscar Niemeyer, sendo que possui uma arena de rodeio com capacidade para 35 mil pessoas sentadas ou 50 mil ocupando o todo espaço da arena e arquibancada. No ano de 2005, realizou o seu Jubileu de Ouro, cinquenta anos de festa.[8]
+            
+            O evento já contou com a presença de artistas internacionais renomados como Shakira, Garth Brooks, Alan Jackson, Reba McEntire, o grupo A-Ha, Gloria Gaynor, Mariah Carey e Shania Twain.[9]
+            Festa do Peão de Barretos
+
+            Artigo
+            Discussão
+            Ler
+            Editar
+            Ver histórico
+            
+            Ferramentas
+            Aspeto ocultar
+            Texto
+            
+            Pequeno
+            
+            Padrão
+            
+            Grande
+            Largura
+            
+            Padrão
+            
+            Largo
+            Cor (beta)
+            
+            Automático
+            
+            Claro
+            
+            Noite
+            20° 30′ 35,38″ S, 48° 35′ 45,39″ O
+            
+            Entrada da Festa do Peão.
+            A Festa do Peão de Barretos é uma festa do peão de boiadeiro que acontece todos os anos na cidade de Barretos, no estado de São Paulo, Brasil. É o maior festival de rodeio da América Latina e atrai competidores de todo o mundo, além de milhares de turistas anualmente.[1][2] Sediou a Copa do Mundo de Rodeio em 2009.[3]
+            
+            A festa é tradicionalmente organizada e promovida no mês de agosto pelo clube "Os Independentes".[4] Entre as tradições presentes na festa estão, além do rodeio, shows de música sertaneja, sendo o maior festival de música sertaneja do país, e a queima do alho.[5][6][7]
+            
+            História
+            Esta grande festa tem suas raízes no transporte de gado pelas estradas de terra desde as pastagens de Minas Gerais, Goiás, Mato Grosso do Sul e Mato Grosso, passando por Barretos em direção aos frigoríficos desta cidade. Os peões das "comitivas" que levavam estas boiadas se reuniam no entardecer para brincar de montar cavalos bravos, daí então surgindo este costume. A prática do rodeio em touros, hoje muito mais dinâmica que a de cavalos, foi trazida dos Estados Unidos. No ano de 1956, na cidade de Barretos, localizada no interior do estado de São Paulo, Brasil, um grupo de rapazes solteiros realizaram a primeira Festa do Peão de Boiadeiro que se tem notícia. Desde então esta grande festa ficou conhecida internacionalmente pela sua gigantesca estrutura e alta qualidade dos peões, cavalos e touros que ali se apresentam.[carece de fontes]
+            
+            Até o ano de 1984, a Festa do Peão era realizada no Recinto Paulo de Lima Correa, no centro da cidade, palco das memoráveis Exposições de Gado, notadamente nas décadas de 50, 60 e 70. "Os Independentes", desde 1985, realizam a festa em enorme parque cuja área é de mais de 110 hectares, projetado pelo famoso arquiteto Oscar Niemeyer, sendo que possui uma arena de rodeio com capacidade para 35 mil pessoas sentadas ou 50 mil ocupando o todo espaço da arena e arquibancada. No ano de 2005, realizou o seu Jubileu de Ouro, cinquenta anos de festa.[8]
+            
+            O evento já contou com a presença de artistas internacionais renomados como Shakira, Garth Brooks, Alan Jackson, Reba McEntire, o grupo A-Ha, Gloria Gaynor, Mariah Carey e Shania Twain.[9]
+            
+            
+            Arena para rodeios e shows.
+            Ver também
+            Copa do Mundo de Rodeio
+            Referências
+             «Barretos inicia competição internacional recebendo campeões de rodeio | Especial Publicitário - Os Independentes». G1. 25 de agosto de 2023. Consultado em 31 de dezembro de 2024
+             «Festa do Peão de Barretos celebra 30 anos do rodeio internacional | Especial Publicitário - Os Independentes». G1. 4 de agosto de 2023. Consultado em 31 de dezembro de 2024
+             «Copa do Mundo de Rodeio começa nesta sexta em Barretos». g1. Consultado em 31 de dezembro de 2024
+             [1]
+             «Festa do Peão de Barretos começa com 'cidade sertaneja' reformulada para receber 900 mil visitantes». G1. 15 de agosto de 2024. Consultado em 31 de dezembro de 2024
+             «Vinte comitivas participam do concurso queima do alho da Festa do peão de Barretos». Em Ribeirão. 13 de agosto de 2018. Consultado em 30 de janeiro de 2020
+             G1 (30 de agosto de 2014). «'Queima do Alho' resgata tradição do tropeiro na Festa do Peão de Barretos». Consultado em 16 de maio de 2016
+             «Festa do Peão de Barretos | Os Independentes». Festa do Peão de Barretos | Os Independentes. Consultado em 28 de maio de 2021
+             «Relembre shows internacionais do rodeio de Barretos». UOL. Consultado em 28 de agosto de 2023
+            Ligações externas
+            
+            O Commons possui uma categoria com imagens e outros ficheiros sobre Festa do Peão de Barretos
+            Rodeio: Tudo Sobre as Festas de Peão no Brasil e no Mundo
+            «Os Independentes»
+            «Portal de Barretos»
+            «Prefeitura de Barretos»
+            Ícone de esboço	Este artigo sobre Festas ou Celebrações é um esboço. Você pode ajudar a Wikipédia expandindo-o.
+             Portal de São Paulo
+            Categorias: Festas do BrasilRodeioBarretosCultura do estado de São PauloFundações em São Paulo em 1956Cultura da Região Sudeste do Brasil
+            Esta página foi editada pela última vez às 16h23min de 24 de janeiro de 2025.</p>
+            <img src="imagem/festa do Peão de barretos.jpg" alt="cultura 2" height="415">
+
+            <h2>Procissão do Fogaréu</h2>
+            <p>A Procissão do Fogaréu é uma tradicional procissão católica realizada anualmente em algumas cidades do Brasil durante a semana santa.[1][2][3]
+
+                A procissão encena a cassação e a prisão de Jesus Cristo, o seguimento da procissão muda de cidade para cidade, assim como o dia da semana santa na qual é feita. Tradicionalmente, dezenas de farricocos vestidos em indumentária especial e segurando tochas, representam soldados romanos. Eles seguem descalços, pelas ruas da cidade. A indumentária utilizada pelos farricocos caracteriza-se por uma túnica comprida de cores variadas e por um longo capuz cônico e pontiagudo, guardando fortes semelhanças com as vestimentas que ainda hoje são comuns nas celebrações da semana santa na Espanha. Trata-se, com efeito, de um traje de origem medieval, o qual era costumeiramente utilizado por penitentes que assim podiam expiar seus pecados sem ter que revelar publicamente sua identidade. Durante a procissão, geralmente são feitas encenações da procura de Jesus pelos soldados romanos, o estilo, no entanto, pode mudar de cidade para cidade. Na cidade de Goiás (GO), pioneira da celebração, por exemplo, a procissão tem início a 0:00 da quinta-feira santa, com a iluminação pública apagada e ao som de tambores, à porta da Igreja da Boa Morte, na praça principal da cidade. Uma multidão de pessoas, composta de fiéis, turistas e moradores locais, assistem ao espetáculo, marchando juntamente aos farricocos em direção à escadaria da Igreja de N. S. do Rosário, onde encontram a mesa da última ceia já dispersa. Em seguida, avançam na direção da Igreja de São Francisco de Paula, que simboliza o Jardim das Oliveiras, onde se dará a prisão de Cristo. Este é representado por um estandarte de linho pintado em duas faces, obra do artista plástico oitocentista Veiga Valle.
+                
+                Na Cidade de Caxias-MA, é realizada na Quarta-Feira Santa, às 22h no adro da Catedral dos Remédios com encenações de focos da vida de Jesus. A Santa Ceia é encenada em frente ao imponente palácio episcopal. Após os dramas, a procissão sai às rias estreitas do centro histórico com a iluminação apagada, passando pelas centenárias igrejas de São Benedito, Rosário e Matriz, retornando em seguida para Catedral. Já na cidade de Santo Antônio de Pádua (RJ),[4] a procissão, feita na segunda-feira santa, tem algumas paradas na quais são feitas encenações da história da prisão e, ao fim de cada encenação, é feita uma pequena pregação, sendo a última parada em frente a Paróquia Santo Antônio, um dos pontos turísticos da cidade.
+                
+                Origem do evento
+                A Procissão do Fogaréu foi introduzida em Goiás pelo padre espanhol Perestelo de Vasconcelos, em 1745.[5][6]
+                
+                Outras procissões no Brasil e em Portugal
+                Em Cunha é realizada na quinta-feira santa, partindo da Praça da Matriz.
+                Em Santo Antônio de Pádua é realizada na segunda-feira santa, partindo da Paróquia Santo Antônio.
+                Em Caxias é realizada na quarta-feira santa, saindo na Catedral de Nossa Senhora dos Remédios.
+                Em Lorena é realizada na sexta-feira santa.
+                Em Petrópolis, a procissão foi introduzida no calendário da Igreja Católica na Paróquia de São João Batista, localizada no distrito da Posse, a 40 km do centro da cidade.
+                Em Braga, também é chamada de Ecce Homo.
+                Em Santa Luzia, na Paraíba, a procissão é realizada na quinta para a sexta feira santa, saindo da igreja de São José Operário até a capela de São Sebastião.
+                Em Porciúncula é realizada na quarta-feira santa, saindo da Igreja Matriz de Santo Antônio.
+                Em Bacabal é realizado na quarta-feira, logo no início da noite.[7]
+                Em Oeiras (Piauí) a procissão ocorre na quinta-feira santa. Somente homens, aos milhares, participam da procissão, carregando velas e lamparinas feitas de lâmpadas usadas.[8][9][10]
+                Em Piracuruca, no Piauí, é realizada na quarta-feira santa, saindo da Igreja Matriz de Nossa Senhora do Carmo pelas ruas do centro histórico.
+                Em São Luiz do Purunã é realizada na quarta-feira santa.
+                Em Governador Valadares é realizada na quinta-feira santa.
+                Em Recife é realizada na sexta-feira santa.
+                Em Marechal Deodoro (Alagoas) é realizada na quinta-feira santa.
+                Em Porto Alegre é realizada no sábado da semana santa.
+                Em Ijuí é realizada no sábado da semana santa.
+                Em Lavras (MG), a Paróquia Sant'Ana realiza a procissão na quinta-feira da Semana Santa.
+                Em Augustinópolis (TO), na Capela São José, realiza a procissão na quinta-feira da Semana Santa.
+                Ver também
+                Ecce Homo (procissão)
+                Semana Santa
+                Referências
+                 «Semana Santa: o significado de cada dia da celebração da paixão, morte e ressurreição de Cristo - CNBB». 26 de março de 2021. Consultado em 4 de abril de 2023
+                 «Procissão do Fogaréu reúne milhares de fiéis na cidade de Goiás». Agência Brasil. 24 de março de 2016. Consultado em 30 de maio de 2024
+                 Raízes, Portal (2 de março de 2016). «Cultura Popular: Procissão do Fogaréu na Cidade de Goiás». Portal Raízes. Consultado em 30 de maio de 2024
+                 «Santo Antônio de Pádua terá Procissão do Fogaréu, Auto da Paixão de Cristo e Espetáculo de Páscoa». SF Notícias. 31 de março de 2023. Consultado em 4 de abril de 2023
+                 efe. «Procissão do Fogaréu reúne milhares de pessoas na cidade de Goiás». Terra. Consultado em 30 de maio de 2024
+                 GO, Do G1 (24 de março de 2016). «Milhares de fiéis acompanham a Procissão do Fogaréu em Goiás». Goiás. Consultado em 30 de maio de 2024
+                 Procissão do Fogaréu: tradição na Semana Santa em Bacabal Vatican News - Notícias - acessado em 23 de março de 2018
+                 Barroso, Lívia Moreira (2012). «Procissão de fogaréu em Oeiras-PI: um estudo de folkmídia». Anuário Unesco/Metodista de Comunicação Regional. 16 (16). 173 páginas. ISSN 2176-0934. doi:10.15603/2176-0934/aum.v16n16p173
+                 «Centenário da Procissão do Fogaréu em Oeiras reúne cinco mil fiéis». G1. Consultado em 17 de abril de 2019
+                 «Oeiras: Cerca de 10 mil homens participam de procissão do Fogaréu». CidadeVerde.com (em inglês). Consultado em 17 de abril de 2019
+                Ligações externas
+                Procissão do Fogaréu
+                Exposição fotográfica virtual sobre o Fogaréu Folia Cultural
+                Site Oficial: procissaodofogareu.org.br
+                [Expandir]vde
+                Turismo no Brasil Brasil
+                 Portal do turismo  Portal do Brasil
+                Categorias: Cultura de GoiásIgreja Católica no BrasilPáscoaFestas do BrasilProcissões religiosas</p>
+                <img src="imagem/Procissão do Fogaréu.jpg" alt="cultura 2" height="415">
+
+                <h2>Festival Internacional de Inverno de Campos do Jordão (Julho)</h2>
+                <p>Tradicional evento acontece de 29 de junho a 28 de julho e terá mais de 60 concertos, em três locais de Campos do Jordão e dois da capital paulista; Um dos pilares do evento, Módulo Pedagógico oferece 137 bolsas de estudo integrais para jovens instrumentistas e regentes, com atividades que incluem Prática de Orquestra, Música de Câmara e Camerata; Pela primeira vez Festival receberá orquestras internacionais, do Chile, Colômbia e Uruguai, além de grupos de câmara da Inglaterra e da Suíça e uma variedade de conjuntos sinfônicos do estado de São Paulo.
+                  O Festival Internacional de Inverno de Campos do Jordão Dr. Luís Arrobas Martins é um grande festival de música erudita do Brasil. Acontece todos os anos no início do inverno brasileiro, durante o mês de julho, no Auditório Cláudio Santoro, localizado em Campos do Jordão, no estado de São Paulo.
+
+Histórico
+Foi idealizado em 1970 pelo então secretário estadual da Fazenda, Luis Arrobas Martins e inspirado no Festival de Tanglewood.
+
+É considerado o maior festival de música clássica do país, e leva a Campos do Jordão alunos bolsistas que passam um mês estudando com importantes nomes da música nacional e internacional. Paralelamente às atividades pedagógicas, há uma intensa programação com convidados que se apresentam em diferentes lugares da cidade.
+
+A partir de 1973, o maestro Eleazar de Carvalho, então diretor artístico do festival, deu início à programação pedagógica, concedendo bolsas de estudos para jovens promissores e trouxe a maior idade sem nomes internacionais de peso como o tenor Roberto Alagna, Aprile Millo, a pianista Maria João Pires, o trompetista Daniel Havens, a cantora Kiri Te Kanawa e o maestro Kurt Masur.
+
+Em 2004 o maestro Roberto Minczuk, como ex-bolsista do festival, retomou a principal característica do evento, com ênfase na programação clássica e na área pedagógica. De 2008 a 2011, o festival teve produção do Centro Tom Jobim, uma organização social da cultura.
+
+A partir de 2012, o festival está sob a direção da Fundação Osesp e Unicamp (Orquestra Sinfônica do Estado de São Paulo). A direção artística está a cargo de Arthur Nestrovski e a direção executiva, de Marcelo Lopes (ambos com cargos equivalentes na Fundação Osesp); a regente titular da Osesp, Marin Alsop, assume função de consultoria artística. A coordenação artístico/pedagógica fica a cargo de Fábio Zanon.
+
+O festival realiza diversos cursos de formação musical, focados na Prática Orquestral, mas abrangendo também Piano, Violão, Canto e Regência, além da prática de Música de Câmara. Curso de Composição será retomado em 2013. Instituições conveniadas incluem a Royal Academy of Music (Londres), Peabody Institute (Baltimore) e Conservatórios de Amsterdã e Haia.
+
+O festival realiza também cerca de 60 apresentações de importantes orquestras, grupos de câmara e recitais nos principais teatros e espaços da cidade, entre eles, o Auditório Cláudio Santoro, Sala São Paulo, Palácio Boa Vista, Igreja de Santa Teresinha, Igreja São Benedito e a Praça Capivari, onde acontecem os concertos ao ar livre para milhares de pessoas. A lista de artistas e professores convidados inclui vários grandes nomes do cenário brasileiro e internacional, como Nelson Freire, Antonio Meneses, Sarah Chang, Jacques Zoon, Giancarlo Guerreiro, Johannes Moser, Ole Edward Antonsen e a própria Marin Alsop.
+
+Ligações externas
+Site oficial
+[Esconder]vde
+Festivais de música do Brasil Brasil
+Região Centro-Oeste	
+BananadaFASFerrockFestival CalangoFestival CoMAFestival Nacional de Música de GoiâniaGoiânia Noise FestivalGoyazes FestivalPorão do RockVillaMix
+Região Nordeste	
+Abril Pro RockFestival BR-135Festival de Inverno de Pedro IIFestival de Inverno BahiaFestival de Inverno de GaranhunsFestival de Verão SalvadorFestival ExpoCratoFestival Nordestino do AgricultorFest Verão ParaíbaForró FestJuaforróLençóis Jazz & Blues FestivalPiauí Pop
+Região Norte	
+ExpoamaFestival da Cunhã
+Região Sudeste	
+Ars VivaAxé BrasilBest Of Blues And RockBH Stone Rock Garagem FestivalC6 FestCamping & RockFestival de Inverno de Campos do JordãoFestival Música das EsferasFestival Música NovaFestival Novas FrequênciasJesus Vida VerãoJoão RockLollapaloozaMITA FestivalMonsters of RockRio ArtRock FestivalRéveillon de CopacabanaRock in RioRock na PraçaRock the MountainSummer Breeze BrasilThe Town FestivalTodo Mundo no RioTomorrowland BrasilVira BrasilVirada Cultural
+Região Sul	
+Atlântida FestivalCalifórnia da CançãoDream Valley FestivalFemuscMorrostockPlaneta AtlântidaPsicodália
+Inter-regionais	
+Ensaios da AnittaLive'N'LouderMIMO FestivalPlayground Music FestivalRio Music CarnivalSkol Summer OnThe Send BrasilXxxperience Festival
+Extintos	
+ASUCeará MusicClaro Q É RockFestival Internacional da CançãoFestival de música SWUFestival PromessasFestival de Verão de GuarapariFree JazzHollywood RockHutúzMaximus FestivalMetal Open AirNatura NósPhono 73Planeta Terra FestivalPop Rock BrasilRuffles ReggaeSkol RockSun Rock FestivalTIM FestivalUFSCtock.</p>
+<img src="imagem/Festival de Inverno de Campos do Jordão.jpg" alt="cultura 2" height="400">
+
+            <h1>Clique aqui para voltar ao site de Pontos turísticos!👇</h1>
+            <p>site do ponto turístico <a href="file:///C:/Users/NIT0312495/Desktop/trabalhos%20atoas!/Inform%C3%A1tica/style/Untitled-1.html" target="_blank" rel="external">Pontos Turísticos</a></p>
+
+
+            
+            <h1>Festas da Cultura Brasileira!👇</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-KN9m65xv9o?si=kWTz39c7nHlUFPOj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div>
+</body>
+</html>

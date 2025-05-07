@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Esportes do Brasil</title>
+
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background: linear-gradient(180deg, #1e90ff, #0077cc);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px #ffffff;
+    }
+
+    .nav-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-list li {
+      margin: 0 15px;
+      opacity: 0;
+      animation: slideIn 0.5s forwards;
+      animation-delay: calc(0.1s * var(--i));
+    }
+
+    .nav-list a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .nav-list a:hover {
+      background-color: #005bb5;
+      transform: scale(1.1);
+    }
+
+    /* Animation for navbar items */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    /* Content Styles */
+    h1, h2 {
+      color: #333;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 10px auto;
+      line-height: 1.6;
+      text-align: justify;
+      padding: 0 20px;
+    }
+
+    img {
+      max-width: 90%;
+      height: auto;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    /* Feedback Section */
+    #feedback-section {
+      margin: 30px 0;
+    }
+
+    textarea {
+      width: 90%;
+      max-width: 600px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background-color: #1e90ff;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0066cc;
+    }
+
+    #melhoria-form, #mensagem-final {
+      margin-top: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-list.active {
+        display: flex;
+        background: #0077cc;
+        padding: 10px 0;
+      }
+
+      .nav-list li {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+      }
+
+      .navbar {
+        padding: 10px 0;
+        position: relative;
+      }
+    }
+  </style>
+
+<div class="social">
+
+    <a href="#" target="_blank">
+      <i class="fab fa-facebook-f"></i></i>
+    </a>
+
+    <a href="#" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="#" target="_blank">
+      <i class="fab fa-twitter"></i>
+    </a>
+    
+    <a href="#" target="_blank">
+      <i class="fab fa-youtube"></i>
+    </a>
+
+    <a href="#" target="_blank">
+      <i class="fab fa-pinterest"></i>
+    </a>
+
+</div>
+
+<style>
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: hsl(0, 0%, 100%);
+        color: #000000;
+        line-height: 1.6;
+    }
+    .conteudo {
+        text-align: justify;
+        max-width: 800px;
+        margin: auto;
+        background-color: hwb(0 100% 0%);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px hwb(197 0% 0%);
+    }
+    h1 {
+        text-align: center;
+        color: #000000;
+    }
+    h2 {
+        text-align: center;
+        color: #0000;
+    }
+    h2 {
+        text-align: center;
+        color: #000000;
+    }
+    h1 {
+        text-align: center;
+        color: #000000;
+    }
+</style>
+</head>
+<body>
+
+</head>
+<body>
+  <nav class="navbar">
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-list">
+      <li style="--i: 1"><a href="#">Início</a></li>
+      <li style="--i: 2"><a href="#">História</a></li>
+      <li style="--i: 3"><a href="#">Economia</a></li>
+      <li style="--i: 4"><a href="#">Gastronomia</a></li>
+      <li style="--i: 5"><a href="#">Música</a></li>
+      <li style="--i: 6"><a href="#">Pontos turísticos</a></li>
+      <li style="--i: 7"><a href="#">Religiões</a></li>
+      <li style="--i: 8"><a href="#">Festas</a></li>
+      <li style="--i: 9"><a href="#">Lendas</a></li>
+      <li style="--i: 10"><a href="#">Esportes</a></li>
+    </ul>
+  </nav>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="social">
+
+        <a href="#" target="_blank">
+          <i class="fab fa-facebook-f"></i></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        
+        <a href="#" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-pinterest"></i>
+        </a>
+
+    </div>
+   
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: hsl(0, 0%, 100%);
+            color: #000000;
+            line-height: 1.6;
+        }
+        .conteudo {
+            text-align: justify;
+            max-width: 800px;
+            margin: auto;
+            background-color: hwb(0 100% 0%);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px hwb(197 0% 0%);
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+        h2 {
+            text-align: center;
+            color: #0000;
+        }
+        h2 {
+            text-align: center;
+            color: #000000;
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    
+    <div class="conteudo">
+  <header class="bg-dark text-white text-center py-4">
+    <h1>Esportes do Brasil</h1>
+    <p class="lead">Explore os esportes mais populares e praticados em todo o Brasil.</p>
+  </header>
+
+  <div class="container my-5">
+    <section id="introducao" class="mb-5">
+      <h2>Introdução</h2>
+      <p>O Brasil é um país apaixonado por esportes. De norte a sul, milhões de brasileiros praticam esportes todos os dias, seja por diversão, saúde ou competitividade. O país possui grandes ícones esportivos e tem um histórico vitorioso, com destaque para o futebol, vôlei, judô, entre outros. Neste site, exploraremos alguns dos esportes mais populares que fazem parte da cultura brasileira.</p>
+    </section>
+
+    <section id="futebol" class="mb-5">
+      <h2>Futebol</h2>
+      <img src="imagem/futebol.jpg" width="750x" height="600x" alt="Futebol no Brasil" class="img-fluid mb-3">
+      <p>O futebol é, sem dúvida, o esporte mais popular do Brasil. O país tem uma história riquíssima no futebol mundial, com 5 títulos de Copa do Mundo. Jogadores como Pelé, Zico, Romário, Ronaldo Fenômeno e Neymar são ícones não só do Brasil, mas do mundo inteiro. O esporte é praticado desde as favelas até os estádios mais grandiosos, sendo a principal fonte de entretenimento para milhões de brasileiros.</p>
+      <p>A paixão pela Seleção Brasileira é algo que une o país, especialmente durante os jogos da Copa do Mundo. As ruas se tornam um mar de verde e amarelo, com pessoas de todas as idades se reunindo para apoiar o time. O futebol também tem um grande papel social no Brasil, sendo uma ferramenta importante para inclusão social e educação em diversas comunidades.</p>
+    </section>
+
+    <section id="volei" class="mb-5">
+      <h2>Vôlei</h2>
+      <img src="imagem/volei.jpg" width="750x" height="600x" alt="Vôlei no Brasil" class="img-fluid mb-3">
+      <p>O vôlei é um dos esportes mais praticados no Brasil, tanto de forma amadora quanto profissional. As seleções masculina e feminina do Brasil são extremamente competitivas e já conquistaram diversos títulos mundiais e olímpicos. Atletas como Giba, Fabi, Bernardinho e Sérgio Santos marcaram época no esporte e são lembrados como lendas do vôlei brasileiro.</p>
+      <p>Além de ser um esporte popular em clubes e escolas, o vôlei de praia também é um dos mais adorados nas praias brasileiras. O clima quente e as belezas naturais tornam a prática do esporte nas areias do litoral um atrativo irresistível. Em eventos como o Circuito Mundial de Vôlei de Praia, o Brasil sempre se destaca, com várias medalhas conquistadas.</p>
+    </section>
+
+    <section id="basquete" class="mb-5">
+      <h2>Basquete</h2>
+      <img src="imagem/basquete.jpg" width="750x" height="600x" alt="Basquete no Brasil" class="img-fluid mb-3">
+      <p>O basquete no Brasil possui uma forte tradição, com destaque para atletas como Oscar Schmidt, Hortência, Paula e, mais recentemente, Leandro Barbosa e Anderson Varejão. O país já conquistou a medalha de bronze nos Jogos Olímpicos e é um dos maiores exportadores de talentos para a NBA, o campeonato de basquete mais importante do mundo.</p>
+      <p>O basquete no Brasil é praticado tanto em escolas e clubes, como também nas ruas, onde a garotada organiza partidas improvisadas. O esporte tem grande apelo em estados como São Paulo e Minas Gerais, com campeonatos locais e competições regionais. Cada vez mais, o basquete está se tornando popular entre os jovens, com investimentos em ligas e academias profissionais.</p>
+    </section>
+
+    <section id="atletismo" class="mb-5">
+      <h2>Atletismo</h2>
+      <img src="imagem/atletismo.jpg" width="750x" height="600x" alt="Atletismo no Brasil" class="img-fluid mb-3">
+      <p>O atletismo é um dos esportes mais antigos e amplamente praticados no Brasil. Com categorias como corrida, salto, lançamento e marcha atlética, o atletismo é uma excelente forma de promover a saúde e o bem-estar. O país já teve atletas de destaque como Joaquim Cruz, Maurren Maggi e Fabiana Murer, que conquistaram medalhas olímpicas.</p>
+      <p>Além das competições internacionais, o atletismo brasileiro é muito forte em campeonatos nacionais e escolares, sendo a base de muitas das futuras promessas esportivas. Programas de formação e clubes de atletismo contribuem para o desenvolvimento de jovens atletas, que competem em diversas modalidades, desde os 10 anos de idade.</p>
+    </section>
+
+    <section id="capoeira" class="mb-5">
+      <h2>Capoeira</h2>
+      <img src="imagem/capoeira.jpg" width="750x" height="600x" alt="Capoeira" class="img-fluid mb-3">
+      <p>A capoeira é uma expressão cultural brasileira que mistura dança, música e luta. Originária da África, foi trazida pelos escravizados e adaptada no Brasil. A capoeira é praticada em todo o país e ganhou o mundo devido à sua riqueza cultural e estética marcante.</p>
+      <p>Além de ser uma arte marcial, a capoeira é um importante elemento da cultura brasileira. Ela é praticada em rodas, onde os participantes executam movimentos acrobáticos e golpes. A música, composta por instrumentos como o berimbau, cuica e atabaque, é essencial para o ritmo da prática. A capoeira é conhecida por sua flexibilidade, agilidade e pelo trabalho em equipe que exige entre os participantes.</p>
+    </section>
+
+    <section id="judô" class="mb-5">
+      <h2>Judô</h2>
+      <img src="imagem/judo.jpg" width="750x" height="600x" alt="Judô no Brasil" class="img-fluid mb-3">
+      <p>O judô é uma arte marcial japonesa que se popularizou rapidamente no Brasil e se tornou um dos esportes mais praticados no país. Atletas como Rogério Sampaio, Aurélio Miguel, e Rafaela Silva conquistaram medalhas olímpicas e consolidaram o Brasil como uma potência no judô mundial.</p>
+      <p>O esporte exige muita disciplina e respeito, e seu impacto na formação de jovens atletas é significativo. O judô brasileiro está bem estruturado, com escolas e academias que promovem o esporte desde a infância, e o país possui uma das melhores seleções do mundo, constantemente no topo do pódio em competições internacionais.</p>
+    </section>
+
+    <!-- Novo Esporte 1: Handebol -->
+    <section id="handebol" class="mb-5">
+      <h2>Handebol</h2>
+      <img src="imagem/handboll.jpg" width="750x" height="600x" alt="Handebol no Brasil" class="img-fluid mb-3">
+      <p>O handebol é um esporte coletivo que tem ganhado cada vez mais popularidade no Brasil. A seleção brasileira feminina é uma das mais fortes do mundo, com títulos importantes como o Campeonato Mundial e medalhas em Jogos Pan-Americanos e Olímpicos. O handebol é jogado em uma quadra onde as equipes tentam marcar gols com uma bola, utilizando as mãos.</p>
+      <p>Com a crescente popularidade, o handebol brasileiro está se tornando um dos principais esportes do país, com mais jovens se engajando na modalidade e federado em várias regiões. O Brasil é conhecido por sua força na modalidade feminina, mas também tem boas seleções masculinas que têm conquistado bons resultados.</p>
+    </section>
+
+    <!-- Novo Esporte 2: Rugby -->
+    <section id="rugby" class="mb-5">
+      <h2>Rugby</h2>
+      <img src="imagem/hugby.jpg" width="750x" height="600x" alt="Rugby no Brasil" class="img-fluid mb-3">
+      <p>O rugby no Brasil tem ganhado força nos últimos anos, com o esporte se expandindo especialmente nas universidades e escolas. O Brasil tem equipes competindo em torneios internacionais e com destaque em eventos como o Rugby Sevens. O esporte é jogado com duas equipes que tentam levar a bola até a linha de gol do adversário, com passes e corridas intensas.</p>
+      <p>O rugby se tornou cada vez mais popular entre os jovens, especialmente com os recentes investimentos em clubes e competições nacionais. Com o aumento do apoio a esse esporte, o Brasil tem mostrado seu potencial em torneios internacionais, com destaque para o desenvolvimento do rugby feminino.</p>
+      </section>
+        <section id="boxe" class="mb-5"> 
+          <h2>Boxe</h2>
+          <img src="imagem/boxe.jpg" width="750x" height="600x" alt="Futebol no Brasil" class="img-fluid mb-3">
+          <p>O boxe no Brasil tem uma história rica e emocionante. Embora tenha começado de forma tímida no início do século XX, com exibições esporádicas em cidades como São Paulo e Rio de Janeiro, o esporte ganhou força nas décadas seguintes.</p>
+          <p>A Confederação Brasileira de Boxe (CBB), fundada em 1933, tem sido fundamental para o desenvolvimento e organização do boxe no país. Atletas como Éder Jofre, Miguel de Oliveira e Acelino "Popó" Freitas conquistaram títulos mundiais e colocaram o Brasil em destaque no cenário internacional. Nos Jogos Olímpicos, o Brasil também brilhou: Robson Conceição conquistou o primeiro ouro olímpico para o país no boxe em 2016, e Hebert Conceição repetiu o feito em Tóquio 2020.</p>
+        </section>
+
+        <section id="Tenis" class="mb-5"></section>
+          <h2>Tênis</h2>
+          <img src="imagem/tenis.jpg" width="750x" height="600x" alt="Futebol no Brasil" class="img-fluid mb-3">
+          <p>O tênis no Brasil tem uma tradição sólida, especialmente nas últimas décadas. A Confederação Brasileira de Tênis (CBT), fundada em 1955, tem sido responsável por organizar torneios nacionais e representar o país em competições internacionais.</p>
+          <p>Atletas como Gustavo Kuerten, tricampeão de Roland Garros, e Maria Esther Bueno, considerada uma das maiores tenistas de todos os tempos, colocaram o Brasil no mapa do tênis mundial. O país também é sede de importantes torneios, como o Rio Open, que atrai grandes nomes do circuito ATP e WTA.​</p>
+        </section>
+
+        <section id="video" class="content-section text-center">
+          <div class="container">
+            <h1>
+                Vídeo sobre os Esportes no Brasil
+            </h1>
+            <div class="ratio ratio-16x9">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/3toaSN2YQy4?si=5Mi3CinyogRbMSrB&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </section>
+    </div>
+       
+        </body>
+        </html>

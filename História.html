@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    
+   
+    <style>
+        /* General Styles */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          background-color: #f9f9f9;
+        }
+    
+        /* Navbar Styles */
+        .navbar {
+          background: linear-gradient(180deg, #1e90ff, #0077cc);
+          padding: 15px 0;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    
+        .nav-list {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+    
+        .nav-list li {
+          margin: 0 15px;
+          opacity: 0;
+          animation: slideIn 0.5s forwards;
+          animation-delay: calc(0.1s * var(--i));
+        }
+    
+        .nav-list a {
+          text-decoration: none;
+          color: white;
+          font-weight: bold;
+          padding: 10px 15px;
+          border-radius: 5px;
+          transition: background-color 0.3s, transform 0.2s;
+          display: inline-block;
+        }
+    
+        .nav-list a:hover {
+          background-color: #005bb5;
+          transform: scale(1.1);
+        }
+    
+        /* Animation for navbar items */
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+    
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+          display: none;
+          font-size: 24px;
+          color: white;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 10px;
+        }
+    
+        /* Content Styles */
+        h1, h2 {
+          color: #333;
+        }
+    
+        p {
+          max-width: 900px;
+          margin: 10px auto;
+          line-height: 1.6;
+          text-align: justify;
+          padding: 0 20px;
+        }
+    
+        img {
+          max-width: 90%;
+          height: auto;
+          margin: 15px 0;
+          border-radius: 8px;
+        }
+    
+        /* Feedback Section */
+        #feedback-section {
+          margin: 30px 0;
+        }
+    
+        textarea {
+          width: 90%;
+          max-width: 600px;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+    
+        button {
+          padding: 8px 16px;
+          margin-top: 10px;
+          cursor: pointer;
+          border: none;
+          border-radius: 4px;
+          background-color: #1e90ff;
+          color: white;
+          font-weight: bold;
+          transition: background-color 0.3s;
+        }
+    
+        button:hover {
+          background-color: #0066cc;
+        }
+    
+        #melhoria-form, #mensagem-final {
+          margin-top: 20px;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .nav-list {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+          }
+    
+          .nav-list.active {
+            display: flex;
+            background: #0077cc;
+            padding: 10px 0;
+          }
+    
+          .nav-list li {
+            margin: 10px 0;
+          }
+    
+          .menu-toggle {
+            display: block;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+          }
+    
+          .navbar {
+            padding: 10px 0;
+            position: relative;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <nav class="navbar">
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-list">
+          <li style="--i: 1"><a href="#">Início</a></li>
+          <li style="--i: 2"><a href="#">História</a></li>
+          <li style="--i: 3"><a href="#">Economia</a></li>
+          <li style="--i: 4"><a href="#">Gastronomia</a></li>
+          <li style="--i: 5"><a href="#">Música</a></li>
+          <li style="--i: 6"><a href="#">Pontos turísticos</a></li>
+          <li style="--i: 7"><a href="#">Religiões</a></li>
+          <li style="--i: 8"><a href="#">Festas</a></li>
+          <li style="--i: 9"><a href="#">Lendas</a></li>
+          <li style="--i: 10"><a href="#">Esportes</a></li>
+        </ul>
+      </nav>
+
+    <div class="social">
+
+        <a href="#" target="_blank">
+          <i class="fab fa-facebook-f"></i></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        
+        <a href="#" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-pinterest"></i>
+        </a>
+
+    </div>
+   
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: hsl(0, 0%, 100%);
+            color: #000000;
+            line-height: 1.6;
+        }
+        .conteudo {
+            text-align: justify;
+            max-width: 800px;
+            margin: auto;
+            background-color: hwb(0 100% 0%);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px hwb(197 0% 0%);
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+        h2 {
+            text-align: center;
+            color: #0000;
+        }
+        h2 {
+            text-align: center;
+            color: #000000;
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    
+    <div class="conteudo">
+      <h1>História do Brasil</h1>
+      <p>A história do Brasil começou com a ocupação dos seres humanos a cerca de 12-20 mil anos.
+
+        No século XVI, os portugueses começaram a colonizar estas terras e transferiram africanos para serem mão de obra escrava nos engenhos que construíram aqui.
+        
+        Por sua vez, estes trabalhadores forçados trariam novos alimentos e animais que mudariam a história dos povos originários para sempre.
+        
+        Pré-História ou período Pré-Cabralino
+        Há evidências da presença de humanos no Brasil há pelo menos 12 mil anos. Cerca de três grandes grupos de seres humanos primitivos ocuparam o Brasil, como os caçadores-coletores, os sambaquis e os povos agricultores.
+        
+        Podemos encontrar vestígios dos povos da pré-história em vários pontos do Brasil como, por exemplo, na Serra da Capivara (PI) ou em Lajedo de Soledade (RS).
+
+        
+    <img src="imagem/historia do brasil.webp" alt="cultuta 4">
+
+    </div>
+  </body>
+  </html>
+  
