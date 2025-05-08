@@ -1,356 +1,289 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Informações sobre a economia brasileira, sua história e desenvolvimento."/>
-  <meta name="keywords" content="economia, Brasil, história, agroindústria, ciclos econômicos"/>
-  <meta name="author" content="Economia Brasileira"/>
-  <title>Economia Brasileira</title>
-  <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-  <style>
-    /* General Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      background-color: #f9f9f9;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História</title>
 
-    /* Navbar Styles */
-    .navbar {
-      background: linear-gradient(180deg, #1e90ff, #0077cc);
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    
+   
+    <style>
+        /* General Styles */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          background-color: #f9f9f9;
+        }
+    
+        /* Navbar Styles */
+        .navbar {
+          background: linear-gradient(180deg, hwb(147 0% 58%), hsl(61, 100%, 55%));
+          padding: 15px 0;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    
+        .nav-list {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+    
+        .nav-list li {
+          margin: 0 15px;
+          opacity: 0;
+          animation: slideIn 0.5s forwards;
+          animation-delay: calc(0.1s * var(--i));
+        }
+    
+        .nav-list a {
+          text-decoration: none;
+          color: white;
+          font-weight: bold;
+          padding: 10px 15px;
+          border-radius: 5px;
+          transition: background-color 0.3s, transform 0.2s;
+          display: inline-block;
+        }
+    
+        .nav-list a:hover {
+          background-color: #005bb5;
+          transform: scale(1.1);
+        }
+    
+        /* Animation for navbar items */
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+    
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+          display: none;
+          font-size: 24px;
+          color: white;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 10px;
+        }
+    
+        /* Content Styles */
+        h1, h2 {
+          color: #333;
+        }
+    
+        p {
+          max-width: 900px;
+          margin: 10px auto;
+          line-height: 1.6;
+          text-align: justify;
+          padding: 0 20px;
+        }
+    
+        img {
+          max-width: 90%;
+          height: auto;
+          margin: 15px 0;
+          border-radius: 8px;
+        }
+    
+        /* Feedback Section */
+        #feedback-section {
+          margin: 30px 0;
+        }
+    
+        textarea {
+          width: 90%;
+          max-width: 600px;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+    
+        button {
+          padding: 8px 16px;
+          margin-top: 10px;
+          cursor: pointer;
+          border: none;
+          border-radius: 4px;
+          background-color: #1e90ff;
+          color: white;
+          font-weight: bold;
+          transition: background-color 0.3s;
+        }
+    
+        button:hover {
+          background-color: #0066cc;
+        }
+    
+        #melhoria-form, #mensagem-final {
+          margin-top: 20px;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .nav-list {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+          }
+    
+          .nav-list.active {
+            display: flex;
+            background: #0077cc;
+            padding: 10px 0;
+          }
+    
+          .nav-list li {
+            margin: 10px 0;
+          }
+    
+          .menu-toggle {
+            display: block;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+          }
+    
+          .navbar {
+            padding: 10px 0;
+            position: relative;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <nav class="navbar">
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-list">
+          <li style="--i: 1"><a href="#">Início</a></li>
+          <li style="--i: 2"><a href="#">História</a></li>
+          <li style="--i: 3"><a href="#">Economia</a></li>
+          <li style="--i: 4"><a href="#">Gastronomia</a></li>
+          <li style="--i: 5"><a href="#">Música</a></li>
+          <li style="--i: 6"><a href="#">Pontos turísticos</a></li>
+          <li style="--i: 7"><a href="#">Religiões</a></li>
+          <li style="--i: 8"><a href="#">Festas</a></li>
+          <li style="--i: 9"><a href="#">Lendas</a></li>
+          <li style="--i: 10"><a href="#">Esportes</a></li>
+        </ul>
+      </nav>
 
-    .nav-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+    <div class="social">
 
-    .nav-list li {
-      margin: 0 15px;
-      opacity: 0;
-      animation: slideIn 0.5s forwards;
-      animation-delay: calc(0.1s * var(--i));
-    }
+        <a href="#" target="_blank">
+          <i class="fab fa-facebook-f"></i></i>
+        </a>
 
-    .nav-list a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      padding: 10px 15px;
-      border-radius: 5px;
-      transition: background-color 0.3s, transform 0.2s;
-      display: inline-block;
-    }
+        <a href="#" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
 
-    .nav-list a:hover {
-      background-color: #005bb5;
-      transform: scale(1.1);
-    }
+        <a href="#" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        
+        <a href="#" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
 
-    /* Animation for navbar items */
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+        <a href="#" target="_blank">
+          <i class="fab fa-pinterest"></i>
+        </a>
 
-    /* Mobile Menu Toggle */
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-    }
-
-    /* Content Styles */
-    h1, h2 {
-      color: #333;
-    }
-
-    p {
-      max-width: 900px;
-      margin: 10px auto;
-      line-height: 1.6;
-      text-align: justify;
-      padding: 0 20px;
-    }
-
-    img {
-      max-width: 90%;
-      height: auto;
-      margin: 15px 0;
-      border-radius: 8px;
-    }
-
-    /* Feedback Section */
-    #feedback-section {
-      margin: 30px 0;
-    }
-
-    textarea {
-      width: 90%;
-      max-width: 600px;
-      padding: 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      padding: 8px 16px;
-      margin-top: 10px;
-      cursor: pointer;
-      border: none;
-      border-radius: 4px;
-      background-color: #1e90ff;
-      color: white;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #0066cc;
-    }
-
-    #melhoria-form, #mensagem-final {
-      margin-top: 20px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .nav-list {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .nav-list.active {
-        display: flex;
-        background: #0077cc;
-        padding: 10px 0;
-      }
-
-      .nav-list li {
-        margin: 10px 0;
-      }
-
-      .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 15px;
-      }
-
-      .navbar {
-        padding: 10px 0;
-        position: relative;
-      }
-    }
-  </style>
+    </div>
+   
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: hsl(0, 0%, 100%);
+            color: #000000;
+            line-height: 1.6;
+        }
+        .conteudo {
+            text-align: justify;
+            max-width: 800px;
+            margin: auto;
+            background-color: hwb(0 100% 0%);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px hwb(197 0% 0%);
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+        h2 {
+            text-align: center;
+            color: #0000;
+        }
+        h2 {
+            text-align: center;
+            color: #000000;
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar">
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-    <ul class="nav-list">
-      <li style="--i: 1"><a href="#">Início</a></li>
-      <li style="--i: 2"><a href="#">História</a></li>
-      <li style="--i: 3"><a href="#">Economia</a></li>
-      <li style="--i: 4"><a href="#">Gastronomia</a></li>
-      <li style="--i: 5"><a href="#">Música</a></li>
-      <li style="--i: 6"><a href="pturistico.html">Pontos turísticos</a></li>
-      <li style="--i: 7"><a href="#">Religiões</a></li>
-      <li style="--i: 8"><a href="#">Festas</a></li>
-      <li style="--i: 9"><a href="#">Lendas</a></li>
-      <li style="--i: 10"><a href="#">Esportes</a></li>
-    </ul>
-  </nav>
 
-  <h1>Economia do Brasil</h1>
-  <img src="imagens/banner.webp" alt="Banner da economia brasileira">
 
-  <h2>Economia do Brasil</h2>
-  <p>A economia brasileira é considerada, em 2018, a nona economia mundial e a primeira da América Latina, segundo dados do FMI. O PIB do Brasil é estimado em 2,14 trilhões de dólares.
 
-    O país atingiu o posto de sétima economia mundial em 1995 e se manteve entre as dez primeiras economias desde então.
 
-    Importante lembrar que os indicadores econômicos não refletem, necessariamente, bons indicadores sociais.</p>
-  <h2>Economia do Brasil Atual</h2>
-  <p>A economia brasileira atual é diversificada e abrange os três setores: primário, secundário e terciário. O País há muito abandonou a monocultura ou o direcionamento unicamente para um tipo de indústria.
-
-    Hoje, a economia brasileira é baseada na produção agrícola, o que faz do Brasil um dos principais exportadores de soja, frango e suco de laranja do mundo. Ainda é líder na produção de açúcar e derivados da cana, celulose e frutas tropicais.
     
-    Igualmente, possui uma importante indústria de carne, com a criação e abate de animais, ocupando o posto de terceiro produtor mundial de carne bovina.
-    
-    Confira os dados da EcoAgro, de 2012, sobre a agroindústria brasileira:
-    
-    </p>
-  <img src="imagens/agronegocio-cke.webp" alt="Gráfico da agroindústria brasileira">
-  <p>Em termos de indústria de transformação, o Brasil se destaca na produção de peças para abastecimento dos setores automotivos e aeronáuticos.
+    <div class="conteudo">
+     
 
-    Da mesma forma é um dos principais produtores de petróleo do mundo, dominando a exploração de petróleo em águas profundas. Mesmo assim é destaque na produção de minério de ferro.</p>
-  
-  <h2>História da Economia Brasileira</h2>
-  <p>O primeiro mercado a ser explorado no território da América por Portugal foi o pau-brasil (Caesalpinia echinata).
+       <h2>História do Brasil</h2>
+       <p>A História do Brasil é marcada por uma grande diversidade de povos, culturas e acontecimentos que moldaram o país ao longo dos séculos. Antes da chegada dos portugueses, o território brasileiro era habitado por milhões de indígenas, organizados em diferentes grupos, como tupis, guaranis, jês, entre outros. Esses povos viviam da caça, pesca, agricultura e tinham culturas ricas, com suas próprias línguas, religiões e formas de organização social.</p>
+       <p>Em 22 de abril de 1500, o navegador português Pedro Álvares Cabral chegou ao litoral sul da Bahia, dando início à presença europeia no Brasil. Nos primeiros anos, os portugueses exploraram principalmente o pau-brasil, uma árvore de madeira avermelhada usada para produzir tinta. A exploração era feita por meio do escambo com os indígenas, que trocavam produtos por objetos simples como espelhos e facas.</p>
 
-    A árvore era encontrada em abundância na costa e através dela, o Brasil recebeu este nome. Esta espécie tem porte médio, chega a atingir 10 metros de altura e possui muitos espinhos.
-    
-    De floração amarela, o pau-brasil tem um tronco avermelhado que após o processamento era utilizado como corante para tecidos.
-    
-    A história econômica do Brasil pode be estudada através de ciclos econômicos. Estes foram elaborados pelo historiador e economista Caio Prado Jr.(1907-1990) como uma tentativa de explicar os caminhos da economia brasileira.</p>
-  <h2>Ciclo do Pau-Brasil</h2>
-  <p>O pau-brasil era encontrado na maior parte da costa do litoral brasileiro, numa faixa que ia do Rio Grande do Norte ao Rio de Janeiro. A extração era feita por mão de obra indígena e obtida através do escambo.
+       <p>Com o tempo, o interesse de Portugal pela terra cresceu. A partir de 1530, começou a colonização de fato, com a criação das capitanias hereditárias e o início da produção de açúcar no litoral nordestino. Para trabalhar nos engenhos, os portugueses passaram a escravizar africanos, iniciando um dos capítulos mais tristes da nossa história: o tráfico negreiro, que trouxe milhões de pessoas escravizadas da África para o Brasil.</p>
+        <img src="imagens/descobrimento.jpg" alt="cultura" height="450">
 
-    Além do uso para a extração de corante, o pau-brasil era útil na produção de utensílios em madeira, na confecção de instrumentos musicais e empregado na construção.
-    
-    Três anos após o descobrimento, o Brasil já contava com um complexo de extração da madeira.</p>
-  <h2>Ciclo da Cana-de-Açúcar</h2>
-  <p>Após o esgotamento da oferta de pau-brasil - que ficou praticamente extinto - os portugueses passaram a explorar a cana-de-açúcar na sua colônia da América. Este ciclo durou mais de um século e teve impacto significativo na economia colonial.
+        <h2>Proclamação  O da República</h2>
+        <p>A Proclamação da República ocorreu no dia 15 de novembro de 1889. Nessa data histórica, a monarquia chegou ao fim e a Era Republicana iniciou no Brasil, instaurando o regime presidencialista.<p>
+          <p> D. Pedro II, então imperador, foi retirado do trono. O primeiro presidente do Brasil foi Marechal Deodoro da Fonseca.</p>
+          <h2>Quem proclamou a República do Brasil</h2>
+          <p>A república foi proclamada por Marechal Deodoro da Fonseca (1827-1892), principal chefe do exército brasileiro, em 15 de novembro de 1889.</p>
+          <p>Ele foi escolhido para liderar um grupo de militares que preparam um levante militar. Dentre esses militares, se destacou Benjamin Constant (1836-1891).</p>
+          <h2>Como aconteceu a Proclamação da República?</h2>
+          <p>Deodoro da Fonseca estava doente. Para convencê-lo a liderar o levante, os militares ocultaram-lhe que o objetivo principal do mesmo era derrubar a monarquia.</p>
+          <p>Isso porque o Marechal era amigo do então imperador Dom Pedro II.</p>
+          <p>Assim, para confundi-lo, as tropas se reuniram no Campo de Santana, no centro do Rio de Janeiro, e derrubaram o gabinete do Visconde de Ouro Preto (1836-1912).</p>
+          <p>Naquele momento, a república não havia sido proclamada.</p>
+          <p>Somente mais tarde, com Deodoro já de volta a sua casa, vários políticos insistiram para que ele assinasse um documento declarando a extinção da monarquia.</p>
+          <p>Alegavam que o imperador iria nomear o político Silveira Martins (1835-1901) no lugar do Visconde de Ouro Preto.</p>
+          <p>Como Silveira Martins era um antigo desafeto do Marechal Deodoro, este assinou a moção da república, e passou a ser o Chefe do Governo Provisório</p>
+          <p>Com isso, a Proclamação da República representou o fim do Brasil Império que havia durado cerca de 70 anos.</p>
+          <p>Dom Pedro II, que era o imperador, foi banido do Brasil com a sua família, e embarcaram rumo à Europa na madrugada do dia 17 de novembro.</p>
+          <p>A população somente soube mais tarde desses acontecimentos, pois para evitar uma guerra civil no Brasil, Dom Pedro II não quis chamar seus aliados.</p>
+            <img src="imagens/proclamacao-da-republica.jpg"cultura" height="450">
 
-    Os colonizadores instalaram engenhos para a produção de açúcar no litoral que era feito através de mão de obra escrava. Os engenhos estavam localizados em todo nordeste, mas principalmente em Pernambuco.
-    Como havia dificuldades em dominar a logística da exploração da cana-de-açúcar, o suporte para a indústria açucareira foi obtido junto aos holandeses, que passaram a responsáveis pela distribuição e comercialização do açúcar ao mercado europeu.
+           
 
-  </p>
-  <img src="imagens/carregarcana.webp" alt="Imagem de carregamento de cana-de-açúcar">
-  <p>Entre as consequências deste cultivo está o desmatamento da costa brasileira e a chegada de mais portugueses para participar dos imensos lucros gerados na colônia portuguesa. Igualmente há a importação de africanos como escravos para trabalhar nos engenhos.
-
-    Como monocultura, a exploração da cana era baseada na estrutura de latifúndios - grandes propriedades de terra - e no trabalho escravo. Este era sustentado pelo tráfico negreiro, dominado pela Inglaterra e por Portugal.
-    
-    Os colonizadores também se dedicavam a outras atividades econômicas como buscar metais preciosos. Isto levou expedições, conhecidas como entradas e bandeiras, ao interior da colônia a fim de encontrar ouro, prata, diamantes e esmeraldas.</p>
-  <h2>Ciclo do Ouro</h2>
-  <p>A busca por pedras e metais preciosos teve o ápice no século XVIII, entre 1709 e 1720, na capitania de São Paulo. Nesta época, esta região comportava o que é hoje Paraná, Minas Gerais, Goiás e o Mato Grosso.
-
-    A exploração dos metais e pedras preciosas foi impulsionada pelo declínio da atividade canavieira, em franca decadência após os holandeses iniciarem o plantio de cana em suas colônias da América Central.
-    
-    Com a descoberta de minas e pepitas nos rios de Minas Gerais tem início o chamado ciclo do ouro. A riqueza que vinha do interior do País influenciou na transferência da capital, antes em Salvador, para o Rio de Janeiro, a fim de controlar a saída do metal precioso.
-    
-    A Coroa Portuguesa sobretaxou os produtos da colônia e cobrava impostos, denominados quinto, derrama e capitação eram pagos nas Casas de Fundição.
-    
-    O quinto correspondia a 20% de toda a produção. Já a derrama representava 1,5 mil quilos de ouro que deveriam ser pagos a cada ano sob pena de penhor compulsório dos bens dos mineradores. Por sua vez, a capitação era a taxa correspondente a cada escravo que trabalhava nas minas.
-    
-    A insatisfação dos colonos com a cobrança de impostos, considerada abusiva, culminou no movimento denominado Inconfidência Mineira, em 1789.
-    
-    A busca pelo ouro influenciou o processo de povoamento e ocupação da colônia, alargando os limites do Tratado de Tordesilhas.
-    
-    Este ciclo perdurou até 1785 coincidindo com o começo da Revolução Industrial na Inglaterra.</p>
-  <h2>Ciclo do Café</h2>
-  <p>O ciclo do café foi o responsável pelo impulso à economia brasileira do início do século XIX. Esse período foi marcado pelo intenso desenvolvimento do país, com a expansão de estradas de ferro, a industrialização e a atração de imigrantes europeus.
-
-    <br> O grão, de origem etíope, era cultivado por holandeses na Guiana Francesa e chegou ao Brasil em 1720, sendo cultivado no Pará e depois Maranhão, Vale do Paraíba (RJ) e São Paulo. As lavouras de café também se espalharam por Minas Gerais e Espírito Santo.
-
-    As exportações começaram em 1816 e o produto liderou a pauta exportadora entre 1830 e 1840.
-
-    A grande parte da produção estava no estado de São Paulo. A elevada quantidade de grãos favoreceu a modernização de modais de transporte, notadamente ferroviário e portuário.
-
-    O escoamento era feito pelos portos do Rio de Janeiro e Santos, que receberam recursos para adequação e melhorias.
-
-    Nesse momento histórico, a mão de obra escrava havia sido abolida e os fazendeiros não quiseram aproveitar os trabalhadores libertos, a maioria das vezes por preconceito.
-
-    Assim houve necessidade de arranjar mais braços para a lavoura, condição que atraiu imigrantes europeus, com destaque para os italianos.
-
-    Após quase cem anos de prosperidade, o Brasil começou a enfrentar uma crise de superprodução: havia mais café para vender do que compradores.
-
-    Do mesmo modo, ocorre o fim do ciclo cafeeiro em consequência da quebra da bolsa de Nova York, em 1929. Sem compradores, a indústria cafeeira diminuiu de importância no cenário econômico brasileiro a partir dos anos 50.
-
-    A queda da produção do café também significou um marco para o país no que tange à diversificação da base econômica.
-
-    A infraestrutura, antes utilizada para o transporte de grãos, foi o suporte para a indústria, que passa a manufaturar produtos de elaboração simplificada, como tecidos, alimentos, sabão e velas.</p>
-
-  <h2>Economia e Industrialização Brasileira</h2>
-  <p>O governo de Getúlio Vargas (1882-1954) passa a incentivar a instalação da indústria pesada no Brasil como a siderurgia e a petroquímica.
-
-    Isso provocou o êxodo rural em vários pontos do país, sobretudo no nordeste, onde a população fugia da decadência rural.
-    
-    As medidas em benefício da indústria foram favorecidas pela eclosão da Segunda Guerra Mundial. Ao fim do conflito, em 1945, a Europa estava devastada e o governo brasileiro investe num moderno parque industrial para se auto abastecer.</p>
-
-  <h2>Metas de Kubitschek</h2>
-  <p>A indústria passa a ser o centro das atenções no governo de Juscelino Kubitschek (1902-1976), que implanta o Plano de Metas, batizado de 50 anos em 5. JK previa que o Brasil cresceria em 5 anos o que não havia crescido em 50.
-
-    O Plano de Metas indicava os cinco setores da economia brasileira para onde os recursos deveriam ser canalizados: energia, transporte, alimentação, indústria de base e educação.
-    
-    Fazia parte também a construção de Brasília e, posteriormente, a transferência da capital do país.</p>
-  <h2>Milagre Econômico</h2>
-  <p>Durante a ditadura militar, os governos abrem o país a investimentos estrangeiros que impulsionam a infraestrutura. O Brasil vive, entre 1969 e 1973, o ciclo denominado Milagre Econômico, quando o PIB cresce 12%.
-
-    É nessa fase que são construídas obras de grande impacto, como a ponte Rio-Niterói, a hidrelétrica de Itaipu e a rodovia Transamazônica.
-    
-    No entanto, essas obras eram caras e também causam a tomada de empréstimos a juros flutuantes. Assim, se vivia uma inflação de 18% ao ano e o crescente envidamento do País, a despeito da geração de milhares de empregos.
-    
-    O Milagre Econômico não possibilitou o desenvolvimento pleno, pois o modelo econômico privilegiou o grande capital e a concentração de renda aumentou.
-    
-    Por parte do setor primário, a produção de soja já era a partir da década de 70 a principal commodity de exportação.</p>
-
-  <h2>A Década Perdida - 1980</h2>
-  <p>O período é marcado pela insuficiência de recursos da União para o pagamento da dívida externa.
-
-    Ao mesmo tempo, o País precisava adaptar-se aos novos paradigmas da economia mundial, que previa inovações tecnológicas e pelo crescimento da influência do setor financeiro.
-    
-    Nesse período, 8% do PIB nacional é direcionado ao pagamento da dívida externa, a renda per capita fica estagnada e a inflação aumenta vertiginosamente.
-    
-    Há, desde então, uma sucessão de planos econômicos para tentar conter a inflação e retomar o crescimento, sem sucesso. Por isso, os economistas chamaram os anos 80 de "década perdida".
-    
-    Observe a evolução do PIB do Brasil de 1965 a 2015:
-  </p>
-  <img src="imagens/economiahst.webp" alt="Gráfico da evolução do PIB brasileiro">
-
-  <div id="feedback-section">
-    <p>Este conteúdo foi útil?</p>
-    <button onclick="responderSim()">Sim</button>
-    <button onclick="responderNao()">Não</button>
-
-    <div id="melhoria-form" style="display: none;">
-      <p>Como podemos melhorar?</p>
-      <textarea id="comentario" rows="4" placeholder="Escreva aqui..."></textarea><br>
-      <button onclick="enviarComentario()">Enviar</button>
+                    
+               
     </div>
-
-    <div id="mensagem-final" style="display: none; color: green;">
-      Obrigado pelo seu feedback!
-    </div>
-  </div>
-
-  <script>
-    // Navbar toggle for mobile
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.nav-list').classList.toggle('active');
-    });
-
-    function responderSim() {
-      document.getElementById('feedback-section').innerHTML = '<p>Obrigado pelo seu feedback!</p>';
-    }
-
-    function responderNao() {
-      document.getElementById('melhoria-form').style.display = 'block';
-    }
-
-    function enviarComentario() {
-      const comentario = document.getElementById('comentario').value;
-      if (comentario.trim() !== "") {
-        document.getElementById('melhoria-form').style.display = 'none';
-        document.getElementById('mensagem-final').style.display = 'block';
-        document.getElementById('comentario').value = ''; // Reset textarea
-      } else {
-        alert("Por favor, escreva algo antes de enviar.");
-      }
-    }
-  </script>
 </body>
 </html>
